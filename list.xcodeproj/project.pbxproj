@@ -14,6 +14,7 @@
 		5B2F28F31C592118002FC477 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B2F28F11C592118002FC477 /* LaunchScreen.storyboard */; };
 		5B2F28FB1C5921DF002FC477 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2F28FA1C5921DF002FC477 /* TableViewController.swift */; };
 		5B2F28FD1C592AE7002FC477 /* CellViewControllerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2F28FC1C592AE7002FC477 /* CellViewControllerTableViewCell.swift */; };
+		5B3A0EBE1C5A75A9009F2B45 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3A0EBD1C5A75A9009F2B45 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		5B2F28F41C592118002FC477 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B2F28FA1C5921DF002FC477 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		5B2F28FC1C592AE7002FC477 /* CellViewControllerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellViewControllerTableViewCell.swift; sourceTree = "<group>"; };
+		5B3A0EBD1C5A75A9009F2B45 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				5B2F28EA1C592118002FC477 /* ViewController.swift */,
 				5B2F28FA1C5921DF002FC477 /* TableViewController.swift */,
 				5B2F28EC1C592118002FC477 /* Main.storyboard */,
+				5B3A0EBD1C5A75A9009F2B45 /* DetailViewController.swift */,
 				5B2F28EF1C592118002FC477 /* Assets.xcassets */,
 				5B2F28F11C592118002FC477 /* LaunchScreen.storyboard */,
 				5B2F28F41C592118002FC477 /* Info.plist */,
@@ -143,6 +146,7 @@
 			files = (
 				5B2F28EB1C592118002FC477 /* ViewController.swift in Sources */,
 				5B2F28FB1C5921DF002FC477 /* TableViewController.swift in Sources */,
+				5B3A0EBE1C5A75A9009F2B45 /* DetailViewController.swift in Sources */,
 				5B2F28FD1C592AE7002FC477 /* CellViewControllerTableViewCell.swift in Sources */,
 				5B2F28E91C592118002FC477 /* AppDelegate.swift in Sources */,
 			);
@@ -294,6 +298,7 @@
 				5B2F28F91C592118002FC477 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

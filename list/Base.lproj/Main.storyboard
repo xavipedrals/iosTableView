@@ -4,8 +4,50 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
+        <!--Detail View Controller-->
+        <scene sceneID="tYp-OE-i6f">
+            <objects>
+                <viewController id="bt1-pl-ffh" userLabel="Detail View Controller" customClass="DetailViewController" customModule="list" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BES-AF-wg1"/>
+                        <viewControllerLayoutGuide type="bottom" id="O7S-7c-yQW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ZFD-pJ-9j9">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uQy-rs-W7e">
+                                <rect key="frame" x="10" y="54" width="580" height="341"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="erj-h1-KQp">
+                                <rect key="frame" x="279" y="453" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="uQy-rs-W7e" secondAttribute="trailing" constant="-10" id="Cng-gv-jkX"/>
+                            <constraint firstItem="uQy-rs-W7e" firstAttribute="leading" secondItem="ZFD-pJ-9j9" secondAttribute="leadingMargin" constant="-10" id="HmF-nr-6Pu"/>
+                            <constraint firstItem="erj-h1-KQp" firstAttribute="centerX" secondItem="ZFD-pJ-9j9" secondAttribute="centerX" id="Tjw-sb-3Ke"/>
+                            <constraint firstItem="O7S-7c-yQW" firstAttribute="top" secondItem="uQy-rs-W7e" secondAttribute="bottom" multiplier="1.5/1" constant="8" symbolic="YES" id="VVP-ev-GAr"/>
+                            <constraint firstItem="uQy-rs-W7e" firstAttribute="top" secondItem="BES-AF-wg1" secondAttribute="bottom" constant="-10" id="uXy-H4-tev"/>
+                            <constraint firstItem="O7S-7c-yQW" firstAttribute="top" secondItem="erj-h1-KQp" secondAttribute="bottom" multiplier="1.25" constant="8" symbolic="YES" id="xj2-Xo-ukP"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="detailImage" destination="uQy-rs-W7e" id="sOf-cS-xvY"/>
+                        <outlet property="detailText" destination="erj-h1-KQp" id="IIi-XZ-cWO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="py3-HH-P5J" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1291" y="-288"/>
+        </scene>
         <!--Table View Controller-->
         <scene sceneID="H9h-W4-SVK">
             <objects>
@@ -60,6 +102,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="1Yv-DW-aAT"/>
+                    <connections>
+                        <segue destination="bt1-pl-ffh" kind="show" identifier="showCell" id="fUB-Jc-aZu"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7ew-Rg-o5k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

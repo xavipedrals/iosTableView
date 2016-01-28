@@ -11,22 +11,23 @@ import UIKit
 class TableViewController: UITableViewController {
 
     //@IBOutlet weak var textLabel: UILabel!
+    var pressedCellIdentifier:Int!
     
-    var records = [("Most piercings, single count (male)", UIImage(named: "most-piercings")),
-        ("Fastest growing plant", UIImage(named: "fastest-growing-plant")),
-        ("Tallest mountain", UIImage(named: "tallest-mountain")),
-        ("Largest spider", UIImage(named: "largest-spider")),
-        ("Fastest internet connection (country)", UIImage(named: "fastest-internet-country")),
-        ("Heaviest birth - triplets (current)", UIImage(named: "heaviest-birth")),
-        ("Largest crocodile in captivity (living)", UIImage(named: "largest-crocodile")),
-        ("Longest fur on a cat", UIImage(named: "logenst-fur-cat")),
-        ("Highest divorce rate", UIImage(named: "highest-divorce-rate")),
-        ("Longest ears on a dog - living", UIImage(named: "longest-ears-dog")),
-        ("Oldest person ever", UIImage(named: "oldest-person-ever"))]
+    var records = [("Most piercings, single count (male)", "most-piercings"),
+        ("Fastest growing plant", "fastest-growing-plant"),
+        ("Tallest mountain", "tallest-mountain"),
+        ("Largest spider",  "largest-spider"),
+        ("Fastest internet connection (country)", "fastest-internet-country"),
+        ("Heaviest birth - triplets (current)",  "heaviest-birth"),
+        ("Largest crocodile in captivity (living)","largest-crocodile"),
+        ("Longest fur on a cat", "logenst-fur-cat"),
+        ("Highest divorce rate", "highest-divorce-rate"),
+        ("Longest ears on a dog - living", "longest-ears-dog"),
+        ("Oldest person ever", "oldest-person-ever")]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.title = "Guiness World Records"
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -50,6 +51,13 @@ class TableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         return records.count
     }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+            
+        pressedCellIdentifier = indexPath.row
+        performSegueWithIdentifier("showCell", sender: self)
+            
+    }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -58,16 +66,11 @@ class TableViewController: UITableViewController {
            
             let record = records[indexPath.row]
             
-            cell.recordImageView.image = record.1
+            cell.recordImageView.image = UIImage(named: record.1)
             cell.recordLabel.text = record.0
-            
-        
-    
             
             return cell
         }
-        
-        
         
         //cell.textLabel?.text = records[indexPath.row].0
         //cell.imageView?.image = records[indexPath.row].1
@@ -75,6 +78,17 @@ class TableViewController: UITableViewController {
         // Configure the cell...
 
         return UITableViewCell()
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let identifier = segue.identifier {
+            if identifier == "showCell" {
+                if let destination = segue.destinationViewController as? DetailViewController {
+                    let record = records[pressedCellIdentifier]
+                    destination.record = record
+                }
+            }
+        }
     }
 
 
